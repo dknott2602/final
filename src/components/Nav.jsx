@@ -1,12 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IMBDImage from './assets/IMBD.jpg'
+
 
 const Nav = () => {
     return (
 <nav>
     <div className="nav__container">
         <a href="/">
-        <img src="" alt="" className="logo"/>
+        <img src={IMBDImage} alt="" className="logo"/>
         </a>
         <ul className="nav__links">
             <li className="nav__list">
