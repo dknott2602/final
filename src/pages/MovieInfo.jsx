@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MovieInfo = () => {
   return (
@@ -8,12 +9,12 @@ const MovieInfo = () => {
         <div className="movies__container">
           <div className="row">
             <div className="movie__selected--top">
-              <a href="/movies" className="movie__link">
+              <Link to="/movies" className="movie__link">
                 <FontAwesomeIcon icon="arrow-left" />
-              </a>
-              <a href="/movies" className="movie__link">
+              </Link>
+              <Link to="/movies" className="movie__link">
                 <h2 className="movie__selected--title--top">Movies</h2>
-              </a>
+              </Link>
             </div>
             <div className="movie__selected">
               <figure className="movie__selected--figure">

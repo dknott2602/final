@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import IMBDImage from "../Assets/IMBD.jpg";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   function openMenu() {
@@ -14,24 +15,24 @@ const Nav = () => {
   return (
     <nav>
       <div className="nav__container">
-        <a href="/">
+        <Link to="/">
           <img src={IMBDImage} alt="" className="logo" />
-        </a>
+        </Link>
         <ul className="nav__links">
           <li className="nav__list">
-            <a href="/" className="nav__link">
+            <Link to="/" className="nav__link">
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav__list">
-            <a href="/movies" className="nav__link">
+            <Link to="/movies" className="nav__link">
               Find Your Movie
-            </a>
+            </Link>
           </li>
           <li className="nav__list">
-            <a href="/" className="nav__link nav__link--primary">
+            <Link to="/" className="nav__link nav__link--primary">
               Contact
-            </a>
+            </Link>
           </li>
           <button className="btn__menu" onClick={openMenu}>
             <FontAwesomeIcon icon="bars" />
@@ -43,12 +44,12 @@ const Nav = () => {
           </button>
           <ul className="menu__links">
             <li className="menu__list">
-              <a href="/" className="menu__link">
+              <Link to="/" className="menu__link">
                 Home
-              </a>
-              <a href="/" className="menu__link">
+              </Link>
+              <Link to="/" className="menu__link">
                 Find Your Movie
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
