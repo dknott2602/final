@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const MovieInfo = () => {
+    const {id} = useParams()
+    const movie = movie.find(movie => +movie.id === +id)
+
   return (
     <div className="movies__body">
       <main id="movies__main">
@@ -19,30 +22,30 @@ const MovieInfo = () => {
             <div className="movie__selected">
               <figure className="movie__selected--figure">
                 <img
-                  src="https://m.media-amazon.com/images/M/MV5BZGRiMDE1NTMtMThmZS00YjE4LWI1ODQtNjRkZGZlOTg2MGE1XkEyXkFqcGc@._V1_SX300.jpg"
+                  src={movie.imdbID}
                   alt=""
                   className="movie__selcted--img"
                 />
               </figure>
               <div className="movie__selected--description">
                 <h2 className="movie__selected--title">
-                  The Fast and the Furious
+                {movie.Title}
                 </h2>
               </div>
-              <div className="movie__selected--year">2001</div>
+              <div className="movie__selected--year">{movie.Year}</div>
               <div className="movie__summary">
                 <h3 className="movie__summary--title">Summary</h3>
-                <p className="movie__summary--para">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas
-                  tenetur, nulla ullam, provident vero consequatur sit
-                  consectetur pariatur culpa quisquam omnis dolore autem libero
-                  eos ea qui assumenda saepe sint.
+                <p className="movie__suumary--para">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Laudantium illum autem porro, repellendus sunt voluptatem ut
+                  est assumenda quibusdam, culpa consequuntur rem veritatis
+                  maiores sequi dolorum iusto nesciunt debitis sed.
                 </p>
-                <p className="movie__summary--para">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas
-                  tenetur, nulla ullam, provident vero consequatur sit
-                  consectetur pariatur culpa quisquam omnis dolore autem libero
-                  eos ea qui assumenda saepe sint.
+                <p className="movie__suumary--para">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Laudantium illum autem porro, repellendus sunt voluptatem ut
+                  est assumenda quibusdam, culpa consequuntur rem veritatis
+                  maiores sequi dolorum iusto nesciunt debitis sed.
                 </p>
               </div>
             </div>

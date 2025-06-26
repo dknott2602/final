@@ -2,15 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Movie = () => {
+
     return (
         <div className="movie">
-            <Link to="/movie/1">
+            <Link to={`/movie/${movie.id}`}>
             <figure className="movie__img--wrapper">
                 <img src={movie.Poster} alt="" className="movie__img"/>
             </figure>
             </Link>
             <div className="movie__title">
-                <Link to="/movie/1" className="">
+                <Link to={`/movie/${movie.id}`} className="">
                 {movie.tilte}
                 </Link>
             </div>
