@@ -5,15 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Landing = () => {
   function SearchComponent({ data }) {
     const [searchTerm, setSearchTerm] = useState("");
-    const [filter, setFilter] = useState("DEFAULT")
 
     const handleSearchChange = (event) => {
       setSearchTerm(event.target.value);
     };
-
-    function handleSearchSubmit() {
-      renderMovies(searchTerm, filter);
-    }
+    
 
     const filteredData = data.filter((item) =>
       item.name.toLowerCase().includes(searchTerm.toLowerCase())
