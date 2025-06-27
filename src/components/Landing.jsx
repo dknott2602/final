@@ -5,14 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Landing = () => {
   function SearchComponent({ data }) {
     const [searchTerm, setSearchTerm] = useState("");
+    const [filter, setFilter] = useState("DEFAULT")
 
     const handleSearchChange = (event) => {
       setSearchTerm(event.target.value);
     };
 
+    function handleSearchSubmit() {
+      renderMovies(searchTerm, filter);
+    }
+
     const filteredData = data.filter((item) =>
       item.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+    
 
     return (
       <section id="landing">
@@ -30,6 +36,10 @@ const Landing = () => {
                   placeholder="Search By Title or Keyword"
                   value={searchTerm}
                   onChange={handleSearchChange}
+                  onKeyPress={(event) => {
+                    if (event.key === "Enter") {
+                      handleSearchSubmit();
+                    }}}
                 />
                 <div className="search__wrapper">
                   <FontAwesomeIcon icon="magnifying-glass" />
@@ -44,6 +54,7 @@ const Landing = () => {
       </section>
     );
   }
+  return <SearchComponent data={[]} />;
 };
 
 export default Landing;
